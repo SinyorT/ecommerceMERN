@@ -12,6 +12,12 @@ app.get('/',(req,res,next)=>{
     });
 });
 
+app.post('/data',(req,res,next)=>{
+    res.status(200).json({
+        message:req.body
+    });
+});
+
 
 
 app.listen(process.env.PORT,()=>{
