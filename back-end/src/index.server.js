@@ -4,6 +4,12 @@ const app=express();
 const bodyParser=require('body-parser');
 const mongoose = require('mongoose');
 
+
+//routes
+const userRoutes=require('./routes/user');
+
+
+
 //environment variable or you can say constants
 env.config();
 
@@ -20,6 +26,8 @@ mongoose.connect(
     });
 
 app.use(bodyParser());
+app.use('/api',userRoutes);
+
 
 app.get('/',(req,res,next)=>{
     res.status(200).json({
