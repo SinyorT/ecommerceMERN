@@ -1,5 +1,5 @@
 const mongoose=require("mongoose");
-const bcrypt=require("bcrypt");
+const bcrypt = require('bcrypt');
 const userSchema= new mongoose.Schema({
     firstName:{
         type:String,
@@ -44,7 +44,7 @@ const userSchema= new mongoose.Schema({
 
 },{timestamps:true});
 
-userSchema.virtual()
+userSchema.virtual('password')
 .set(function(password){
     this.hash_password=bcrypt.hashSync(password,10);
 });

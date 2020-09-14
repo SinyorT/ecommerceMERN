@@ -16,11 +16,11 @@ env.config();
 //mongodb connection
 //mongodb+srv://root:<password>@cluster0.3ejut.mongodb.net/<dbname>?retryWrites=true&w=majority
 mongoose.connect(
-    `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.3ejut.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority
-    `, 
+`mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.3ejut.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority`, 
     {
         useNewUrlParser: true, 
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex:true
     }).then(()=>{
         console.log('db connected');
     });
