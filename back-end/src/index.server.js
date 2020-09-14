@@ -2,9 +2,23 @@ const express=require('express');
 const env=require('dotenv');
 const app=express();
 const bodyParser=require('body-parser');
+const mongoose = require('mongoose');
 
 //environment variable or you can say constants
 env.config();
+
+//mongodb connection
+//mongodb+srv://root:<password>@cluster0.3ejut.mongodb.net/<dbname>?retryWrites=true&w=majority
+mongoose.connect(
+    `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.3ejut.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority
+    `, 
+    {
+        useNewUrlParser: true, 
+        useUnifiedTopology: true
+    }).then(()=>{
+        console.log('db connected');
+    });
+
 app.use(bodyParser());
 
 app.get('/',(req,res,next)=>{
