@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 /**
 * @author
@@ -12,4 +12,4 @@ const Signin = (props) => {
 
  }
 
-export default Signin
+export default Signin;
