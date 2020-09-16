@@ -1,19 +1,20 @@
 import React from 'react'
-import { Navbar,Nav } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 /**
 * @author
 * @function Header
 **/
 
-const  Header= (props) => {
-  return(
+const Header = (props) => {
+  return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-    <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand>
-    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-    <Navbar.Collapse id="responsive-navbar-nav">
-      <Nav className="mr-auto">
-       {/*  <Nav.Link href="#features">Features</Nav.Link>
+      <Container>
+        <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            {/*  <Nav.Link href="#features">Features</Nav.Link>
         <Nav.Link href="#pricing">Pricing</Nav.Link>
         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -22,17 +23,18 @@ const  Header= (props) => {
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
 </NavDropdown>*/}
-      </Nav>
-      <Nav> 
-        <Nav.Link href="#deets">Sign In</Nav.Link>
-        {/* <Nav.Link eventKey={2} href="#memes">
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets">Sign In</Nav.Link>
+            {/* <Nav.Link eventKey={2} href="#memes">
           Dank memes
   </Nav.Link> */}
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-   )
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  )
 
- }
+}
 
 export default Header;
