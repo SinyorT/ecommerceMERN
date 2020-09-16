@@ -1,5 +1,6 @@
-import React from 'react'
-
+import React from 'react';
+import{Jumbotron} from 'react-bootstrap';
+import Layout from '../../components/Layout';
 /**
 * @author
 * @function Home
@@ -7,7 +8,11 @@ import React from 'react'
 
 const Home = (props) => {
   return(
-    <div>Home</div>
+      <Layout>
+        <Jumbotron> 
+          <h1>Welcome to Admin Dashboard</h1>
+        </Jumbotron>
+      </Layout>
    )
 
  }
