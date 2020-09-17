@@ -1,4 +1,5 @@
 const mongoose=require('mongoose');
+
 const productSchema= new mongoose.Schema({
     name:{
         type:String,
@@ -25,7 +26,8 @@ const productSchema= new mongoose.Schema({
     ],
     reviews:[
         {
-            userId:mongoose.Schema.Types.ObjectId, ref:'User'
+            userId:{type:mongoose.Schema.Types.ObjectId, ref:'User'},
+            review:String
         }
     ],
     category:{type:mongoose.Schema.Types.ObjectId, ref:'Category'},
