@@ -5,11 +5,14 @@ const categorySchema= new mongoose.Schema({
         required:true,
         trim:true
     },
-    slug:{
+    slug:{  
         type:String,
         required:true,
         unique:true
     },
+    categoryImage:{
+        type:String
+    }, 
     parentId:{
         type:String
     },
