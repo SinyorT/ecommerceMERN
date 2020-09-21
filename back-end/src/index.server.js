@@ -1,8 +1,10 @@
 const express=require('express');
 const env=require('dotenv');
 const app=express();
+var cors = require("cors");
 const mongoose = require('mongoose');
 const path=require('path');
+
 
 //routes
 const authRoutes=require('./routes/auth');
@@ -25,7 +27,13 @@ mongoose.connect(
     }).then(()=>{
         console.log('db connected');
     });
+    var corsOptions = {
+        origin: '*',
+        optionsSuccessStatus: 200
+   }
 
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/public',express.static(path.join(__dirname,'uploads')));
 app.use('/api',authRoutes);
